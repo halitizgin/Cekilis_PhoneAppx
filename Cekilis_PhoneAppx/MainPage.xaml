@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="App31.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App31"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="anasayfaButton" Icon="Home" Label="Anasayfa" Click="anasayfaButton_Click"/>
+            <AppBarButton x:Name="hakkindaButton" Icon="Help" Label="Hakkında" Click="hakkindaButton_Click"/>
+            <AppBarButton x:Name="kayitlarButton" Icon="Save" Label="Kayıtlar" Click="kayitlarButton_Click"/>
+            <AppBarButton x:Name="dilButton" Icon="Keyboard" Label="Dil" Click="dilButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <ListBox x:Name="katilimcilar" HorizontalAlignment="Left" Height="161" Margin="10,178,0,0" VerticalAlignment="Top" Width="203" DoubleTapped="katilimcilar_DoubleTapped" x:FieldModifier="public"  FontSize="20" SelectionChanged="katilimcilar_SelectionChanged" IsSynchronizedWithCurrentItem="False" SelectionMode="Multiple" BorderBrush="Gray" Background="{ThemeResource ContentDialogDimmingThemeBrush}">
+            <ListBox.Foreground>
+                <SolidColorBrush Color="{ThemeResource PhoneBaseMediumMidSolidColor}"/>
+            </ListBox.Foreground>
+        </ListBox>
+        <RadioButton x:Name="tekliRadioButton" Content="Tekli" HorizontalAlignment="Left" Margin="218,168.001,0,0" VerticalAlignment="Top" Height="64" Width="111" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        <RadioButton x:Name="takimliRadioButton" Content="Takımlı" HorizontalAlignment="Left" Margin="218,211,-1,0" VerticalAlignment="Top" Width="183" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        <TextBlock x:Name="kazanacakSayisiBaslikTextBlock" HorizontalAlignment="Left" Margin="218,258,-1,0" TextWrapping="Wrap" Text="Kazanacak sayısı:" VerticalAlignment="Top" Height="26" Width="183" FontSize="20" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        <Button x:Name="cekilisYapButton" Content="Çekiliş Yap" HorizontalAlignment="Left" Margin="218,356,0,0" VerticalAlignment="Top" Click="cekilisYapButton_Click" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" BorderBrush="Gray"/>
+        <TextBox x:Name="kazanacakSayisiTextBox" HorizontalAlignment="Left" Margin="216,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="111" InputScope="NumberFullWidth" RenderTransformOrigin="0.433,1.224" Background="{ThemeResource ContentDialogDimmingThemeBrush}" BorderBrush="Gray" Foreground="#FF666666"/>
+        <RichEditBox x:Name="kazananlarRichTextBox" HorizontalAlignment="Left" Margin="9,362,0,0" VerticalAlignment="Top" Height="173" Width="202" BorderBrush="Gray" Background="{ThemeResource ContentDialogDimmingThemeBrush}" Foreground="#FF666666"/>
+        <TextBlock x:Name="kazananlarBaslikTextBlock" HorizontalAlignment="Left" Margin="8.999,338,0,0" TextWrapping="Wrap" Text="Kazananlar:" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.705" FontSize="20" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        <TextBlock x:Name="katilimciSayisiTextBlock" HorizontalAlignment="Left" Margin="9,95,0,0" TextWrapping="Wrap" Text="Şuanda 0 adet veri bulunmaktadır." VerticalAlignment="Top" RenderTransformOrigin="0.519,0.705" Width="390" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        <TextBlock x:Name="cikmaIhtimaliTextBlock" HorizontalAlignment="Left" Margin="9,111,0,0" TextWrapping="Wrap" Text="Seçili verinin çıkma ihtimali: %0" VerticalAlignment="Top" RenderTransformOrigin="0.519,0.705" Width="390" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        <ToggleSwitch x:Name="hizliDuzenlemeToggleSwitchButton" Header="Hızlı düzenleme modu" HorizontalAlignment="Left" Margin="9,37,0,0" VerticalAlignment="Top" OffContent="Kapalı" OnContent="Açık" Height="57" Toggled="hizliDuzenlemeToggleSwitchButton_Toggled" RenderTransformOrigin="0.487,0.599" Width="281"/>
+        <Button x:Name="kaydetButton" Content="Kaydet" HorizontalAlignment="Left" Margin="9.999,122,0,0" VerticalAlignment="Top" Width="68" Click="kaydetButton_Click" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" BorderBrush="Gray"/>
+        <Button x:Name="kayitYoneticisiButton" Content="Kayıt Yöneticisi" HorizontalAlignment="Left" Margin="124,122,0,0" VerticalAlignment="Top" Width="162" Click="kayitYoneticisiButton_Click" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" BorderBrush="Gray"/>
+        <RichEditBox x:Name="hizliDuzenlemeModuRichTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="159" Width="202" TextChanged="hizliDuzenlemeModuRichTextBox_TextChanged" SelectionChanged="hizliDuzenlemeModuRichTextBox_SelectionChanged" Margin="9,179,0,0" Visibility="Collapsed"/>
+        <AppBarButton x:Name="kapatAppBar" HorizontalAlignment="Left" Icon="Cancel" Label="Çıkış" Margin="315,-12,0,0" VerticalAlignment="Top" Click="kapaUygulamaButton_Click"/>
+
+    </Grid>
+</Page>

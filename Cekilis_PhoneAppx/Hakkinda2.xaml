@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="Cekilis_PhoneApp.Hakkinda2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cekilis_PhoneApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="anasayfaButton" Icon="Home" Label="Anasayfa" Click="anasayfaButton_Click"/>
+            <AppBarButton x:Name="hakkindaButton" Icon="Help" Label="Hakkında" Click="hakkindaButton_Click"/>
+            <AppBarButton x:Name="kayitlarButton" Icon="Save" Label="Kayıtlar" Click="kayitlarButton_Click"/>
+            <AppBarButton x:Name="dilButton" Icon="Keyboard" Label="Dil" Click="dilButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Loaded="Grid_Loaded" Tapped="Grid_Tapped">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="167*"/>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="body" Style="{StaticResource MessageDialogContentStyle}" TextWrapping="Wrap" Margin="2.667,67,73,289.667" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
+    		<Run FontFamily="Segoe UI, Tahoma, Arial, Arial Unicode MS, Microsoft Sans Serif, Lucida Sans Unicode" Text="Çekiliş "/>
+    		<Run FontFamily="Segoe UI, Tahoma, Arial, Arial Unicode MS, Microsoft Sans Serif, Lucida Sans Unicode" Text="2"/>
+    		<Run FontFamily="Segoe UI, Tahoma, Arial, Arial Unicode MS, Microsoft Sans Serif, Lucida Sans Unicode" Text=".0.0.0"/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Kodlama: Ready"/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Yazılım &amp; Programlama &amp; Webmaster Forumu ve Örnek Projeler için: "/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="http://www.kodevreni.com"/>
+        </TextBlock>
+        <Button x:Name="kapatButton" Content="Kapat" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.494,0.47" Margin="2.667,223.833,175.667,0.667" Click="kapatButton_Click" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock x:Name="hakkindaBaslik" HorizontalAlignment="Left" Margin="2.667,10,0,0" TextWrapping="Wrap" Text="Çekiliş Hakkında" VerticalAlignment="Top" FontSize="30" Grid.Column="1"/>
+
+    </Grid>
+</Page>
